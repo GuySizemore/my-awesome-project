@@ -1,3 +1,23 @@
+.row-centered {
+  text-align: center;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  text-align: left;
+  margin-right: -4px;
+}
+
+
+
+}
+
+
+
+
+
+/*
 
 .container {
  background-color: #272727;
@@ -13,8 +33,7 @@ footer {
   font-family: 'Open Sans', sans-serif;
  }
 
-
-
+*/
 
 
 
