@@ -251,7 +251,8 @@ body {
   list-style: none;
   width:100%;
   length:100%;
+  margin-top: 100px;
   justify-content: center;
-  dispaly: flex;
+  text-align: center;
 
 }
