@@ -12,7 +12,6 @@ function getFiles() {
     });
 }
 
-
 function refreshFileList() {
   const template = $('#list-template').html();
   const compiledTemplate = Handlebars.compile(template);

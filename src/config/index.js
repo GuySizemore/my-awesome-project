@@ -1,5 +1,5 @@
 
 module.exports = {
   appName: 'Can I Eat It',
-  port: 3030
+  port: 3000
 }

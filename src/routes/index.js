@@ -26,7 +26,7 @@ router.post('/file', function(req, res, next) {
   FILES.push(data);
   res.status(201).json(data);
 });
-
+//updates route parameter
 router.put('/file/:fileId', function(req, res, next) {
   const {fileId} = req.params;
   const file = FILES.find(entry => entry.id === fileId);
@@ -38,11 +38,12 @@ router.put('/file/:fileId', function(req, res, next) {
   file.description = req.body.description;
   res.json(file);
 });
-
+//deletes route parameter
 router.delete('/file/:fileId', function(req, res, next) {
   res.end(`Deleting file '${req.params.fileId}'`);
 });
 
+//reads route parameter
 router.get('/file/:fileId', function(req, res, next) {
   const {fileId} = req.params;
   // same as 'const fileId = req.params.fileId'
