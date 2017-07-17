@@ -1,0 +1,12 @@
+
+    <!-- Select Multiple -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="selectmultiple">Supplement Name</label>
+      <div class="col-md-5">
+        <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+          <option value="1">example a</option>
+          <option value="2">example b</option>
+          <option value="">example c</option>
+        </select>
+      </div>
+    </div>
