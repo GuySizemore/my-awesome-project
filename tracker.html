@@ -10,6 +10,7 @@
     <title>Foodstuff</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styles.css">
@@ -47,65 +48,58 @@
 
     <form class="form-horizontal">
     <fieldset>
-
     <legend>Supplement Tracker </legend>
 
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">Date taken </label>
-      <div class="col-md-4">
-      <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
-      </div>
-    </div>
+    <div id="list-container"></div>
+    <button id="add-file-button" class="btn btn-primary" onclick="toggleAddFileForm()">Add File</button>
+    <div id="form-container" class="panel hidden">
+      <form id="add-file-form">
+        <input type="hidden" id="file-id" value="" />
 
-    <!-- Select Multiple -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="selectmultiple">Supplement Name</label>
-      <div class="col-md-5">
-        <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
-          <option value="1">example a</option>
-          <option value="2">example b</option>
-          <option value="">example c</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label for="file-title">Suppliment</label>
+          <input type="text" class="form-control" id="file-title" placeholder="Title">
+        </div>
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="radios">Serving(s)</label>
+          <div class="col-md-4">
+            <label class="radio-inline" for="radios-0">
+              <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+              1
+            </label>
+            <label class="radio-inline" for="radios-1">
+              <input type="radio" name="radios" id="radios-1" value="2">
+              2
+            </label>
+            <label class="radio-inline" for="radios-2">
+              <input type="radio" name="radios" id="radios-2" value="3">
+              3
+            </label>
+            <label class="radio-inline" for="radios-3">
+              <input type="radio" name="radios" id="radios-3" value="4">
+              4
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="file-description">Description</label>
+          <input type="text" class="form-control" id="file-description" placeholder="Description">
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">Date taken </label>
+          <div class="col-md-4">
+          <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+          </div>
+        </div>
+        <button type="button" onclick="submitFileForm()" class="btn btn-success">Submit</button>
+        <button type="button" onclick="cancelFileForm()" class="btn btn-link">cancel</button>
+      </form>
     </div>
-
-    <!-- Multiple Radios (inline) -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="radios">Serving(s)</label>
-      <div class="col-md-4">
-        <label class="radio-inline" for="radios-0">
-          <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-          1
-        </label>
-        <label class="radio-inline" for="radios-1">
-          <input type="radio" name="radios" id="radios-1" value="2">
-          2
-        </label>
-        <label class="radio-inline" for="radios-2">
-          <input type="radio" name="radios" id="radios-2" value="3">
-          3
-        </label>
-        <label class="radio-inline" for="radios-3">
-          <input type="radio" name="radios" id="radios-3" value="4">
-          4
-        </label>
-      </div>
-    </div>
-
-    <!-- Button -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="singlebutton">Add</label>
-      <div class="col-md-4">
-        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
-      </div>
-    </div>
-
     </fieldset>
     </form>
-
   <!-- End Supplement Form -->
-
 
 
     <!-- Footer -->
