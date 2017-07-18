@@ -1,11 +1,9 @@
 [
-  {"title":"Vitamin A", "description": "---" },
-  {"title":"Vitamin B-12", "description": "---" },
-  {"title":"Calcium", "description": "---" },
-  {"title":"Multi", "description": "---" },
-  {"title":"Macca Root", "description": "---" },
-  {"title":"MSM", "description": "---" },
-  {"title":"Ginsing", "description": "---" },
-  {"title":"Creatin", "description": "---" },
-  {"title":"---", "description": "---" }
+  {"title":"Vitamin A", "description": "good for your skin" },
+  {"title":"Vitamin B-12", "description": "good for your blood" },
+  {"title":"Calcium", "description": "good for your bones" },
+  {"title":"Multi", "description": "good for everything" },
+  {"title":"Macca Root", "description": "good for stamina" },
+  {"title":"MSM", "description": "great for your joints" },
+  {"title":"Ginsing", "description": "good for your labido" }
 ]

@@ -5,10 +5,10 @@ const mongoose = require('mongoose');
 
 const FILES = [
   {id: 'a', suppliment: 'green', description: 'Plants'},
-  {id: 'a', suppliment: 'yellow', description: 'Macca'},
-  {id: 'a', suppliment: 'purple', description: 'Beet juice'},
-  {id: 'a', suppliment: 'orange', description: 'Vitamin B-12'},
-  {id: 'a', suppliment: 'red', description: 'Multi'},
+  {id: 'b', suppliment: 'yellow', description: 'Macca'},
+  {id: 'c', suppliment: 'purple', description: 'Beet juice'},
+  {id: 'd', suppliment: 'orange', description: 'Vitamin B-12'},
+  {id: 'e', suppliment: 'red', description: 'Multi'},
 ];
 
 router.use('/doc', function(req, res, next) {
