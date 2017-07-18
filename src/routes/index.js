@@ -4,20 +4,19 @@ const mongoose = require('mongoose');
 
 
 const FILES = [
-  {id: 'a', suppliment: 'green', serving: 2, description: 'Plants'},
-  {id: 'a', suppliment: 'yellow', serving: 1, description: 'Macca'},
-  {id: 'a', suppliment: 'purple', serving: 1, description: 'Beet juice'},
-  {id: 'a', suppliment: 'orange', serving: 3, description: 'Vitamin B-12'},
-  {id: 'a', suppliment: 'red', serving: 2, description: 'Multi'},
+  {id: 'a', suppliment: 'green', description: 'Plants'},
+  {id: 'b', suppliment: 'yellow', description: 'Macca'},
+  {id: 'c', suppliment: 'purple', description: 'Beet juice'},
+  {id: 'd', suppliment: 'orange', description: 'Vitamin B-12'},
+  {id: 'e', suppliment: 'red', description: 'Multi'},
 ];
-
 
 router.use('/doc', function(req, res, next) {
   res.end(`Documentation http://expressjs.com/`);
 });
 
 router.get('/file', function(req, res, next) {
-  mongoose.model('File').find({}, function(err, files) {
+  mongoose.model('File').find({deleted: {$ne: true}}, function(err, files) {
     if (err) {
       console.log(err);
       return res.status(500).json(err);
@@ -26,6 +25,7 @@ router.get('/file', function(req, res, next) {
     res.json(files);
   });
 });
+
 
 router.post('/file', function(req, res, next) {
   const File = mongoose.model('File');
@@ -68,7 +68,25 @@ router.put('/file/:fileId', function(req, res, next) {
 });
 
 router.delete('/file/:fileId', function(req, res, next) {
-  res.end(`Deleting file '${req.params.fileId}'`);
+  const File = mongoose.model('File');
+  const fileId = req.params.fileId;
+
+  File.findById(fileId, function(err, file) {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+    if (!file) {
+      return res.status(404).json({message: "File not found"});
+    }
+
+    file.deleted = true;
+
+    file.save(function(err, doomedFile) {
+      res.json(doomedFile);
+    })
+
+  })
 });
 
 router.get('/file/:fileId', function(req, res, next) {
