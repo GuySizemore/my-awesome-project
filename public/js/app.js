@@ -20,7 +20,9 @@ function refreshFileList() {
 
       window.fileList = files;
 
+
       const data = {files: files};
+      console.log("ABOUT TO RENDER", data)
       const html = compiledTemplate(data);
       $('#list-container').html(html);
     })
