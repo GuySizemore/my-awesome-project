@@ -33,9 +33,7 @@ p {
 }
 a {
   color: #42DCA3;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+
 }
 a:hover,
 a:focus {
@@ -73,10 +71,6 @@ a:focus {
   text-align: center;
   color: white;
   background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
 }
 .intro .intro-body {
   display: table-cell;
@@ -110,9 +104,6 @@ a:focus {
   font-size: 40px;
   color: white;
   background: transparent;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
 }
 .btn-circle:hover,
 .btn-circle:focus {
@@ -126,16 +117,7 @@ a:focus {
   -moz-transition-property: -moz-transform;
   -moz-transition-duration: 1s;
 }
-.btn-circle:hover i.animated {
-  -webkit-animation-name: pulse;
-  -moz-animation-name: pulse;
-  -webkit-animation-duration: 1.5s;
-  -moz-animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-}
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(1);
@@ -150,20 +132,7 @@ a:focus {
     transform: scale(1);
   }
 }
-@-moz-keyframes pulse {
-  0% {
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-  100% {
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-}
+
 .content-section {
   padding-top: 100px;
 }
@@ -172,10 +141,6 @@ a:focus {
   padding: 50px 0;
   color: white;
   background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
 }
 
 @media (min-width: 767px) {
@@ -191,8 +156,6 @@ a:focus {
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border-radius: 0;
 }
@@ -241,10 +204,6 @@ footer p {
   text-shadow: none;
   background: #fcfcfc;
   background: rgba(255, 255, 255, 0.2);
-}
-
-body {
-  webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }
 
 .aaron{
