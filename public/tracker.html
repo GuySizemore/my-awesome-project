@@ -1,12 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="UTF-8" content="HTML,CSS,JavaScript">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Foodstuff</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,9 +12,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/normalize.css">
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
+  <body>
     <!-- Navigation -->
     <div class="container-fluid">
       <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
@@ -42,76 +36,67 @@
        </div>
      </nav>
     </div>
+<!-- End Navigation -->
 
-  <!-- Supplement Form -->
+    <div class="container">
+      <h1>Suppliment Tracker</h1>
+      <div id="list-container"></div>
+      <button id="add-file-button" class="btn btn-primary" onclick="toggleAddFileForm()">Add Suppliment</button>
+      <div id="form-container" class="panel hidden">
+        <form id="add-file-form">
+          <input type="hidden" id="file-id" value="" />
 
-    <form class="form-horizontal">
-    <fieldset>
-    <legend>Supplement Tracker </legend>
+          <div class="form-group">
+            <label for="file-title">Suppliment</label>
+            <input type="text" class="form-control" id="file-title" placeholder="Title">
+          </div>
+          <div class="form-group">
+            <label for="file-description">Description</label>
+            <input type="text" class="form-control" id="file-description" placeholder="Description">
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Date taken </label>
+            <div class="col-md-4">
+            <input id="textinput" name="textinput" type="text" placeholder="Date Taken" class="form-control input-md">
+            </div>
+          </div>
+          <button type="button" onclick="submitFileForm()" class="btn btn-success">Submit</button>
+          <button type="button" onclick="cancelFileForm()" class="btn btn-link">cancel</button>
+        </form>
+      </div>
+    </div>
 
-    <div id="list-container"></div>
     <script id="list-template" type="text/x-handlebars-template">
       <ul class="list-group">
         {{#each files}}
         <li class="list-group-item">
           <strong>{{title}}</strong> - {{description}}
+          <span class="pull-right">
+            <button type="button" class="btn btn-xs btn-default" onclick="editFileClick('{{_id}}')">Edit</button>
+            <button type="button" class="btn btn-xs btn-danger" onclick="deleteFileClick('{{_id}}')">Del</button>
+          </span>
         </li>
         {{/each}}
       </ul>
     </script>
 
-    <button id="add-file-button" class="btn btn-primary" onclick="toggleAddFileForm()">Add File</button>
-    <div id="form-container" class="panel hidden">
-      <form id="add-file-form">
-        <input type="hidden" id="file-id" value="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+    <script src="/js/app.js"></script>
 
-        <div class="form-group">
-          <label for="file-title">Suppliment</label>
-          <input type="text" class="form-control" id="file-title" placeholder="Title">
-        </div>
-        <!-- Multiple Radios (inline) -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="radios">Serving(s)</label>
-          <div class="col-md-4">
-            <label class="radio-inline" for="radios-0">
-              <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-              1
-            </label>
-            <label class="radio-inline" for="radios-1">
-              <input type="radio" name="radios" id="radios-1" value="2">
-              2
-            </label>
-            <label class="radio-inline" for="radios-2">
-              <input type="radio" name="radios" id="radios-2" value="3">
-              3
-            </label>
-            <label class="radio-inline" for="radios-3">
-              <input type="radio" name="radios" id="radios-3" value="4">
-              4
-            </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="file-description">Description</label>
-          <input type="text" class="form-control" id="file-description" placeholder="Description">
-        </div>
-        <!-- Text input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="textinput">Date taken </label>
-          <div class="col-md-4">
-          <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
-          </div>
-        </div>
-        <button type="button" onclick="submitFileForm()" class="btn btn-success">Submit</button>
-        <button type="button" onclick="cancelFileForm()" class="btn btn-link">cancel</button>
-      </form>
-    </div>
-    </fieldset>
-    </form>
-  <!-- End Supplement Form -->
+<!--
+    <script>
+      $(document).ready(function() {
+        const data = { name: "Code Louisvillains" }
+        const greetingTemplate = 'Hello {{name}}! I am a template!';
+        const greetingCompiled = Handlebars.compile(greetingTemplate);
+        const greetingRendered = greetingCompiled(data);
+        $('body h1').first().after(greetingRendered);
+        refreshFileList();
+      });
+    </script>
+-->
 
-
-    <!-- Footer -->
     <footer>
         <div class="container text-center">
             <p>Copyright &copy; I did this 2017</p>
@@ -124,6 +109,5 @@
     <!-- Theme JavaScript -->
     <script src="js/app.js"></script>
 
-</body>
-
+  </body>
 </html>
