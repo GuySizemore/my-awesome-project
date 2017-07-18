@@ -2,10 +2,10 @@
 const mongoose = require('mongoose');
 
 const FileSchema = new mongoose.Schema({
-  Supliment: String,
-  serving: Number,
+  title: String,
   description: String,
   created_at: { type: Date, default: Date.now },
+  deleted: {type: Boolean, default: false}
 });
 
 

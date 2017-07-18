@@ -68,7 +68,7 @@ function submitFileForm() {
       toggleAddFileForm();
     })
     .fail(function(error) {
-      console.log("Failures at posting, we are", error);
+      console.log("Not posting!", error);
     })
 
   console.log("Your file data", fileData);
