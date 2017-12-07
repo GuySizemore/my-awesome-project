@@ -6,6 +6,10 @@ body {
   color: #FFF;
   background-color: black;
 }
+.bodycolor {
+  color: #000000; 
+}
+
 html {
   width: 100%;
   height: 100%;
